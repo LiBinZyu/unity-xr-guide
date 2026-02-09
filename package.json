@@ -4,9 +4,9 @@
   "description": "Unity XR 开发学习指南",
   "main": "index.html",
   "scripts": {
-    "dev": "docsify serve .",
-    "serve": "docsify serve .",
-    "deploy": "gh-pages -d ."
+    "dev": "npx docsify-cli@latest serve .",
+    "serve": "npx docsify-cli@latest serve .",
+    "start": "npx docsify-cli@latest serve ."
   },
   "keywords": [
     "unity",
@@ -17,17 +17,14 @@
     "tutorial",
     "guide"
   ],
-  "author": "Your Name",
+  "author": "LiBinZyu",
   "license": "MIT",
-  "devDependencies": {
-    "gh-pages": "^6.1.1"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/unity-xr-guide.git"
+    "url": "https://github.com/LiBinZyu/unity-xr-guide.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/unity-xr-guide/issues"
+    "url": "https://github.com/LiBinZyu/unity-xr-guide/issues"
   },
-  "homepage": "https://your-username.github.io/unity-xr-guide"
+  "homepage": "https://LiBinZyu.github.io/unity-xr-guide"
 }
