@@ -1,9 +1,8 @@
 <!-- _navbar.md -->
 
 * Getting Started
-  * [Quick Start](doc/quickstart.md)
-  * [Basic Concepts](doc/README.md)
+  * [Install Meta SDK](doc/helloworld.md)
+  * [Basic Concepts](doc/xr-overview.md)
 
-* Links
-  * [Documentation](#)
-  * [PDF Download](#)
+* Download
+  * [PDF](#)

@@ -1,8 +1,10 @@
 <!-- docs/_sidebar.md -->
 
 * [Home](/)
-* [Quick Start](doc/quickstart.md)
 * [Concepts](doc/README.md)
-  * [XR Overview](doc/xr-overview.md)
+  * [What is XR](doc/xr-overview.md)
   * [Unity](doc/unity-basics.md)
+  * [Open XR](doc/openxr.md)
   * [Maths](doc/math-fundamentals.md)
+* [Install Meta SDK](doc/helloworld.md)
+* []()
