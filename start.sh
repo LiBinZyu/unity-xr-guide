@@ -1,24 +1,24 @@
 #!/bin/bash
 
-echo "🚀 Unity XR 开发指南 - 现代化启动器"
+echo "🚀 Unity XR Development Guide - Modern Launcher"
 echo "====================================="
-echo "📝 项目地址: https://github.com/LiBinZyu/unity-xr-guide"
-echo "🌐 访问地址: http://localhost:3000"
-echo "⏹️  停止服务: 按 Ctrl+C"
+echo "📝 Project URL: https://github.com/LiBinZyu/unity-xr-guide"
+echo "🌐 Access URL: http://localhost:3000"
+echo "⏹️  Stop Service: Press Ctrl+C"
 echo ""
 
-# 检查必要环境
+# Check required environment
 if ! command -v node &> /dev/null; then
-    echo "❌ 错误: 未找到 Node.js"
-    echo "💡 请先安装 Node.js: https://nodejs.org/"
+    echo "❌ Error: Node.js not found"
+    echo "💡 Please install Node.js first: https://nodejs.org/"
     exit 1
 fi
 
-echo "✅ Node.js 版本: $(node --version)"
-echo "✅ npm 版本: $(npm --version)"
+echo "✅ Node.js Version: $(node --version)"
+echo "✅ npm Version: $(npm --version)"
 echo ""
 
-# 使用最新的 docsify-cli
-echo "🔄 正在启动 Docsify 服务 (使用最新版本)..."
+# Use latest docsify-cli
+echo "🔄 Starting Docsify Service (using latest version)..."
 echo "=========================================="
 npx docsify-cli@latest serve . --port 3000

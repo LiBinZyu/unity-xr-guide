@@ -1,86 +1,94 @@
-/* 自定义黑白灰高对比样式 */
+/* Custom color scheme styles */
 :root {
-  /* 基础颜色 - 高对比度黑白灰 */
-  --theme-color: #000000;
+  /* Color palette */
+  --background-color: #F7FAFC;
+  --sidebar-window-color: #F1F3F5;
+  --border-color: rgba(17, 20, 45, 0.05);
+  --icon-color: #9B9CAE;
+  --secondary-font-color: #616B7E;
+  --primary-font-color: #11142D;
+  
+  /* Theme colors */
+  --theme-color: var(--primary-font-color);
   --theme-color-dark: #000000;
-  --theme-color-light: #ffffff;
+  --theme-color-light: var(--background-color);
   
-  /* 背景色 */
-  --base-background-color: #ffffff;
-  --base-color: #000000;
+  /* Background */
+  --base-background-color: var(--background-color);
+  --base-color: var(--primary-font-color);
   
-  /* 侧边栏 */
-  --sidebar-background: #ffffff;
-  --sidebar-border-color: #000000;
-  --sidebar-toggle-icon-color: #000000;
+  /* Sidebar */
+  --sidebar-background: var(--sidebar-window-color);
+  --sidebar-border-color: var(--border-color);
+  --sidebar-toggle-icon-color: var(--icon-color);
   
-  /* 链接颜色 */
-  --link-color: #000000;
-  --link-color--hover: #333333;
+  /* Links */
+  --link-color: var(--primary-font-color);
+  --link-color--hover: var(--secondary-font-color);
   
-  /* 代码块 */
-  --code-inline-background: #f0f0f0;
-  --code-inline-color: #000000;
-  --code-block-background: #f8f8f8;
-  --code-block-color: #000000;
+  /* Code blocks */
+  --code-inline-background: var(--sidebar-window-color);
+  --code-inline-color: var(--primary-font-color);
+  --code-block-background: var(--sidebar-window-color);
+  --code-block-color: var(--primary-font-color);
   
-  /* 表格 */
-  --table-row-even-background: #f5f5f5;
-  --table-row-odd-background: #ffffff;
-  --table-border-color: #000000;
+  /* Tables */
+  --table-row-even-background: var(--sidebar-window-color);
+  --table-row-odd-background: var(--background-color);
+  --table-border-color: var(--border-color);
   
-  /* 搜索框 */
-  --search-background: #ffffff;
-  --search-border-color: #000000;
-  --search-color: #000000;
+  /* Search */
+  --search-background: var(--background-color);
+  --search-border-color: var(--border-color);
+  --search-color: var(--primary-font-color);
   
-  /* 字体 */
+  /* Fonts */
   --base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --base-font-size: 16px;
   --base-line-height: 1.6;
   
-  /* 边距和间距 */
+  /* Spacing */
   --sidebar-width: 280px;
   --content-max-width: 90%;
 }
 
-/* 强制高对比度 */
+/* Smooth font rendering */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 标题样式 */
+/* Heading styles */
 h1, h2, h3, h4, h5, h6 {
-  color: #000000;
+  color: var(--primary-font-color);
   font-weight: 600;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 
-/* 段落和文本 */
+/* Paragraph and text */
 p {
-  color: #000000;
+  color: var(--primary-font-color);
   line-height: 1.7;
   margin-bottom: 1em;
 }
 
-/* 链接样式 */
+/* Link styles */
 a {
-  color: #000000;
+  color: var(--primary-font-color);
   text-decoration: underline;
   font-weight: 500;
 }
 
 a:hover {
-  color: #333333;
+  color: var(--secondary-font-color);
   text-decoration: underline;
 }
 
-/* 代码样式 */
+/* Code styles */
 code {
-  background-color: #f0f0f0;
-  color: #000000;
+  background-color: var(--sidebar-window-color);
+  color: var(--primary-font-color);
   padding: 2px 6px;
   border-radius: 3px;
   font-family: 'Monaco', 'Consolas', monospace;
@@ -88,8 +96,8 @@ code {
 }
 
 pre {
-  background-color: #f8f8f8;
-  border: 1px solid #000000;
+  background-color: var(--sidebar-window-color);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 1em;
   overflow-x: auto;
@@ -100,7 +108,7 @@ pre code {
   padding: 0;
 }
 
-/* 表格样式 */
+/* Table styles */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -108,33 +116,33 @@ table {
 }
 
 th, td {
-  border: 1px solid #000000;
+  border: 1px solid var(--border-color);
   padding: 12px;
   text-align: left;
 }
 
 th {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--primary-font-color);
+  color: var(--background-color);
   font-weight: 600;
 }
 
 tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background-color: var(--sidebar-window-color);
 }
 
-/* 引用块 */
+/* Blockquote */
 blockquote {
-  border-left: 4px solid #000000;
+  border-left: 4px solid var(--primary-font-color);
   margin: 1em 0;
   padding: 0.5em 1em;
-  background-color: #f8f8f8;
-  color: #000000;
+  background-color: var(--sidebar-window-color);
+  color: var(--primary-font-color);
 }
 
-/* 列表 */
+/* Lists */
 ul, ol {
-  color: #000000;
+  color: var(--primary-font-color);
   margin-bottom: 1em;
 }
 
@@ -142,32 +150,32 @@ li {
   margin-bottom: 0.3em;
 }
 
-/* 侧边栏增强 */
+/* Sidebar enhancements */
 .sidebar ul li a {
-  color: #000000;
+  color: var(--primary-font-color);
   font-weight: 500;
 }
 
 .sidebar ul li.active > a {
-  color: #000000;
+  color: var(--primary-font-color);
   font-weight: 700;
-  border-left: 3px solid #000000;
+  border-left: 3px solid var(--primary-font-color);
 }
 
-/* 搜索框增强 */
+/* Search enhancements */
 .search input {
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  color: #000000;
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  color: var(--primary-font-color);
 }
 
-/* 响应式优化 */
+/* Responsive optimization */
 @media screen and (max-width: 768px) {
   :root {
     --sidebar-width: 0;
   }
   
   .sidebar {
-    background-color: #ffffff;
+    background-color: var(--sidebar-window-color);
   }
 }

@@ -1,226 +1,226 @@
-# 3D 数学基础
+# 3D Math Fundamentals
 
-3D 开发离不开数学，掌握必要的数学知识对 XR 开发至关重要。
+3D development cannot be separated from mathematics, and mastering necessary mathematical knowledge is crucial for XR development.
 
-## 📐 坐标系统
+## 📐 Coordinate Systems
 
-### Unity 坐标系
-Unity 使用左手坐标系：
-- **X轴**: 向右为正
-- **Y轴**: 向上为正  
-- **Z轴**: 向前为正
+### Unity Coordinate System
+Unity uses a left-handed coordinate system:
+- **X-axis**: Positive to the right
+- **Y-axis**: Positive upward  
+- **Z-axis**: Positive forward
 
-### 世界坐标 vs 本地坐标
-- **世界坐标**: 相对于世界原点的绝对位置
-- **本地坐标**: 相对于父对象的相对位置
+### World Coordinates vs Local Coordinates
+- **World Coordinates**: Absolute position relative to world origin
+- **Local Coordinates**: Relative position relative to parent object
 
 ```csharp
-// 获取世界坐标
+// Get world coordinates
 Vector3 worldPosition = transform.position;
 
-// 获取本地坐标
+// Get local coordinates
 Vector3 localPosition = transform.localPosition;
 ```
 
-## ➕ 向量运算
+## ➕ Vector Operations
 
-### 向量基础
-向量既有大小又有方向的量。
+### Vector Basics
+Vectors are quantities with both magnitude and direction.
 
 ```csharp
-// 创建向量
+// Create vectors
 Vector3 position = new Vector3(1, 2, 3);
 Vector3 direction = Vector3.forward;
 
-// 向量运算
+// Vector operations
 Vector3 sum = vector1 + vector2;
 Vector3 difference = vector1 - vector2;
 Vector3 scaled = vector1 * 2;
 ```
 
-### 常用向量操作
+### Common Vector Operations
 ```csharp
-// 向量长度
+// Vector magnitude
 float magnitude = vector.magnitude;
 
-// 单位向量
+// Unit vector
 Vector3 normalized = vector.normalized;
 
-// 点积 (判断角度关系)
+// Dot product (determine angular relationship)
 float dotProduct = Vector3.Dot(vector1, vector2);
 
-// 叉积 (计算垂直向量)
+// Cross product (calculate perpendicular vector)
 Vector3 crossProduct = Vector3.Cross(vector1, vector2);
 
-// 距离计算
+// Distance calculation
 float distance = Vector3.Distance(point1, point2);
 ```
 
-## 📊 矩阵变换
+## 📊 Matrix Transformations
 
-### 变换矩阵
-用于表示位置、旋转、缩放的复合变换。
+### Transformation Matrices
+Used to represent composite transformations of position, rotation, and scaling.
 
 ```csharp
-// 创建变换矩阵
+// Create transformation matrix
 Matrix4x4 translation = Matrix4x4.Translate(new Vector3(1, 2, 3));
 Matrix4x4 rotation = Matrix4x4.Rotate(Quaternion.Euler(45, 0, 0));
 Matrix4x4 scale = Matrix4x4.Scale(new Vector3(2, 2, 2));
 
-// 组合变换
+// Combine transformations
 Matrix4x4 transform = translation * rotation * scale;
 ```
 
-### 常用变换函数
+### Common Transformation Functions
 ```csharp
-// 世界到本地变换
+// World to local transformation
 Vector3 localPoint = transform.InverseTransformPoint(worldPoint);
 
-// 本地到世界变换
+// Local to world transformation
 Vector3 worldPoint = transform.TransformPoint(localPoint);
 
-// 方向变换
+// Direction transformation
 Vector3 worldDirection = transform.TransformDirection(localDirection);
 ```
 
-## 🔄 旋转表示
+## 🔄 Rotation Representation
 
-### 欧拉角
-使用三个角度值表示旋转 (X, Y, Z)。
+### Euler Angles
+Represent rotation using three angle values (X, Y, Z).
 
 ```csharp
-// 欧拉角创建四元数
+// Euler angles create quaternion
 Quaternion rotation = Quaternion.Euler(30, 45, 60);
 
-// 获取欧拉角
+// Get Euler angles
 Vector3 eulerAngles = rotation.eulerAngles;
 ```
 
-### 四元数
-避免万向节死锁问题的旋转表示方法。
+### Quaternions
+Rotation representation method that avoids gimbal lock problems.
 
 ```csharp
-// 四元数运算
+// Quaternion operations
 Quaternion q1 = Quaternion.Euler(0, 90, 0);
 Quaternion q2 = Quaternion.Euler(0, 45, 0);
 
-// 旋转组合
+// Rotation combination
 Quaternion combined = q1 * q2;
 
-// 球面插值
+// Spherical interpolation
 Quaternion interpolated = Quaternion.Slerp(q1, q2, 0.5f);
 ```
 
-### 轴角表示
-绕指定轴旋转指定角度。
+### Axis-Angle Representation
+Rotate around a specified axis by a specified angle.
 
 ```csharp
-// 绕 Y 轴旋转 90 度
+// Rotate 90 degrees around Y-axis
 Quaternion rotation = Quaternion.AngleAxis(90, Vector3.up);
 ```
 
-## 📐 几何计算
+## 📐 Geometric Calculations
 
-### 点和平面
+### Points and Planes
 ```csharp
-// 平面定义
+// Plane definition
 Plane plane = new Plane(Vector3.up, Vector3.zero);
 
-// 点到平面距离
+// Point to plane distance
 float distance = plane.GetDistanceToPoint(point);
 
-// 点在平面哪一侧
+// Which side of plane the point is on
 bool side = plane.GetSide(point);
 ```
 
-### 射线检测
+### Ray Detection
 ```csharp
-// 创建射线
+// Create ray
 Ray ray = new Ray(origin, direction);
 
-// 射线投射
+// Ray casting
 if (Physics.Raycast(ray, out RaycastHit hit))
 {
-    Debug.Log($"击中物体: {hit.collider.name}");
-    Debug.Log($"击中点: {hit.point}");
+    Debug.Log($"Hit object: {hit.collider.name}");
+    Debug.Log($"Hit point: {hit.point}");
 }
 ```
 
-### 球面和包围盒
+### Spheres and Bounding Boxes
 ```csharp
-// 球体碰撞检测
+// Sphere collision detection
 Bounds bounds = new Bounds(center, size);
 if (bounds.Contains(point))
 {
-    // 点在包围盒内
+    // Point is inside bounding box
 }
 
-// 球体相交检测
+// Sphere intersection detection
 float distance = Vector3.Distance(sphere1Center, sphere2Center);
 bool intersecting = distance < (sphere1Radius + sphere2Radius);
 ```
 
-## 🎯 实用算法
+## 🎯 Practical Algorithms
 
-### 插值计算
+### Interpolation Calculations
 ```csharp
-// 线性插值
+// Linear interpolation
 float lerpValue = Mathf.Lerp(start, end, t);
 
-// 平滑阻尼
+// Smooth damping
 float smoothValue = Mathf.SmoothDamp(current, target, ref velocity, smoothTime);
 
-// 弹簧动画
+// Spring animation
 transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * speed);
 ```
 
-### 角度处理
+### Angle Processing
 ```csharp
-// 角度标准化
+// Angle normalization
 float normalizedAngle = Mathf.Repeat(angle, 360);
 
-// 角度差计算
+// Angle difference calculation
 float angleDifference = Mathf.DeltaAngle(fromAngle, toAngle);
 
-// 向量夹角
+// Vector angle between
 float angle = Vector3.Angle(vector1, vector2);
 ```
 
-### 随机数生成
+### Random Number Generation
 ```csharp
-// 范围内随机数
+// Random number in range
 float randomFloat = Random.Range(0f, 10f);
 int randomInt = Random.Range(1, 10);
 
-// 随机方向
+// Random direction
 Vector3 randomDirection = Random.insideUnitSphere;
 
-// 随机点在圆内
+// Random point inside circle
 Vector2 randomPoint = Random.insideUnitCircle;
 ```
 
-## 📊 矩阵和线性代数
+## 📊 Matrices and Linear Algebra
 
-### 矩阵运算
+### Matrix Operations
 ```csharp
-// 矩阵乘法
+// Matrix multiplication
 Matrix4x4 result = matrix1 * matrix2;
 
-// 矩阵转置
+// Matrix transpose
 Matrix4x4 transposed = matrix.transpose;
 
-// 矩阵逆
+// Matrix inverse
 Matrix4x4 inverse = matrix.inverse;
 ```
 
-### 行列式和特征值
-虽然 Unity 没有直接提供，但理解这些概念很重要：
-- 行列式表示矩阵的缩放因子
-- 特征值和特征向量描述变换的主要方向
+### Determinants and Eigenvalues
+Although Unity doesn't provide direct support, understanding these concepts is important:
+- Determinant represents the scaling factor of the matrix
+- Eigenvalues and eigenvectors describe the main directions of transformation
 
-## 🔧 实际应用示例
+## 🔧 Practical Application Examples
 
-### 物体跟随
+### Object Following
 ```csharp
 public class FollowTarget : MonoBehaviour
 {
@@ -239,7 +239,7 @@ public class FollowTarget : MonoBehaviour
 }
 ```
 
-### 朝向目标
+### Facing Target
 ```csharp
 public class LookAtTarget : MonoBehaviour
 {
@@ -263,7 +263,7 @@ public class LookAtTarget : MonoBehaviour
 }
 ```
 
-### 边界检测
+### Boundary Detection
 ```csharp
 public class BoundaryCheck : MonoBehaviour
 {
@@ -273,13 +273,13 @@ public class BoundaryCheck : MonoBehaviour
     {
         Vector3 position = transform.position;
         
-        // X 轴边界检测
+        // X-axis boundary detection
         if (Mathf.Abs(position.x) > boundarySize.x / 2)
         {
             position.x = Mathf.Sign(position.x) * boundarySize.x / 2;
         }
         
-        // Y 轴边界检测
+        // Y-axis boundary detection
         if (Mathf.Abs(position.y) > boundarySize.y / 2)
         {
             position.y = Mathf.Sign(position.y) * boundarySize.y / 2;
@@ -290,22 +290,22 @@ public class BoundaryCheck : MonoBehaviour
 }
 ```
 
-## 💡 学习建议
+## 💡 Learning Suggestions
 
-### 循序渐进
-1. 先掌握基本概念和 API 使用
-2. 通过实际项目加深理解
-3. 逐步学习高级数学知识
+### Progressive Learning
+1. First master basic concepts and API usage
+2. Deepen understanding through actual projects
+3. Gradually learn advanced mathematical knowledge
 
-### 实践为主
-- 多写代码验证数学概念
-- 调试观察数值变化
-- 可视化数学运算结果
+### Practice-Oriented
+- Write code to verify mathematical concepts
+- Debug and observe numerical changes
+- Visualize mathematical operation results
 
-### 资源推荐
-- Unity 官方数学文档
-- 3D 数学经典教材
-- 在线数学教程
-- 开源项目源码学习
+### Resource Recommendations
+- Unity official math documentation
+- Classic 3D math textbooks
+- Online math tutorials
+- Learn from open-source project source code
 
-扎实的数学基础是成为优秀 XR 开发者的重要保障！
+Solid mathematical foundation is an important guarantee for becoming an excellent XR developer!

@@ -1,28 +1,28 @@
 @echo off
-title Unity XR 开发指南
+title Unity XR Development Guide
 color 0A
 
-echo 🚀 Unity XR 开发指南 - 现代化启动器
+echo 🚀 Unity XR Development Guide - Modern Launcher
 echo =====================================
-echo 📝 项目地址: https://github.com/LiBinZyu/unity-xr-guide
-echo 🌐 访问地址: http://localhost:3000
-echo ⏹️  停止服务: 按 Ctrl+C
+echo 📝 Project URL: https://github.com/LiBinZyu/unity-xr-guide
+echo 🌐 Access URL: http://localhost:3000
+echo ⏹️  Stop Service: Press Ctrl+C
 echo.
 
-REM 检查 Node.js
+REM Check Node.js
 node -v >nul 2>nul
 if %errorlevel% neq 0 (
-    echo ❌ 错误: 未找到 Node.js
-    echo 💡 请先安装 Node.js: https://nodejs.org/
+    echo ❌ Error: Node.js not found
+    echo 💡 Please install Node.js first: https://nodejs.org/
     pause
     exit /b 1
 )
 
-echo ✅ Node.js 已安装
-echo ✅ npm 已安装
+echo ✅ Node.js installed
+echo ✅ npm installed
 echo.
 
-echo 🔄 正在启动 Docsify 服务 (使用最新版本)...
+echo 🔄 Starting Docsify Service (using latest version)...
 echo ==========================================
 npx docsify-cli@latest serve . --port 3000
 

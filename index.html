@@ -1,55 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Unity XR 开发指南</title>
+  <title>Unity XR Development Guide</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Unity XR 开发学习指南">
+  <meta name="description" content="Unity XR Development Learning Guide">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <!-- 使用简洁的黑白灰主题 -->
+  <!-- Using clean black and white theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-  <!-- 自定义高对比度样式 -->
+  <!-- Custom high contrast styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">加载中...</div>
+  <div id="app">Loading...</div>
   <script>
     window.$docsify = {
-      name: 'Unity XR 开发指南',
-      repo: 'https://github.com/LiBinZyu/unity-xr-guide',
+      name: 'Unity XR Development Guide',
+      // Removed repo reference to eliminate GitHub icon
       loadSidebar: true,
       loadNavbar: true,
-      coverpage: true,
+      // Commented out coverpage to disable it
+      // coverpage: true,
       auto2top: true,
       maxLevel: 4,
       subMaxLevel: 2,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
-      // 主题配置 - 纯白背景，高对比度
+      // Theme configuration - pure white background, high contrast
       themeable: {
         readyTransition: true,
         responsiveTables: true
       },
-      // 搜索配置
+      // Search configuration
       search: {
         maxAge: 86400000,
         paths: 'auto',
-        placeholder: '搜索文档...',
-        noData: '找不到结果',
+        placeholder: 'Search documents...',
+        noData: 'No results found',
         depth: 4
       }
     }
   </script>
-  <!-- Docsify 核心库 -->
+  <!-- Docsify core library -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <!-- Themeable 主题系统 -->
+  <!-- Themeable theme system -->
   <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
-  <!-- 搜索插件 -->
+  <!-- Search plugin -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <!-- 图片缩放插件 -->
+  <!-- Image zoom plugin -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <!-- 复制代码插件 -->
+  <!-- Copy code plugin -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
 </body>
 </html>
