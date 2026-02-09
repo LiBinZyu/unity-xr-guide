@@ -45,11 +45,11 @@
   /* Fonts */
   --base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --base-font-size: 16px;
-  --base-line-height: 1.6;
+  --base-line-height: 1.5;
   
   /* Spacing */
   --sidebar-width: 240px;
-  --content-max-width: 90%;
+  --content-max-width: 95%;
 }
 
 /* Smooth font rendering */
@@ -172,6 +172,11 @@ li {
 @media screen and (max-width: 768px) {
   :root {
     --sidebar-width: 0;
+    --content-max-width: 100%;
+  }
+  .content {
+    max-width: 100% !important;
+    padding: 0 16px !important;
   }
   
   .sidebar {
