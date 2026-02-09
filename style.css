@@ -1,0 +1,173 @@
+/* 自定义黑白灰高对比样式 */
+:root {
+  /* 基础颜色 - 高对比度黑白灰 */
+  --theme-color: #000000;
+  --theme-color-dark: #000000;
+  --theme-color-light: #ffffff;
+  
+  /* 背景色 */
+  --base-background-color: #ffffff;
+  --base-color: #000000;
+  
+  /* 侧边栏 */
+  --sidebar-background: #ffffff;
+  --sidebar-border-color: #000000;
+  --sidebar-toggle-icon-color: #000000;
+  
+  /* 链接颜色 */
+  --link-color: #000000;
+  --link-color--hover: #333333;
+  
+  /* 代码块 */
+  --code-inline-background: #f0f0f0;
+  --code-inline-color: #000000;
+  --code-block-background: #f8f8f8;
+  --code-block-color: #000000;
+  
+  /* 表格 */
+  --table-row-even-background: #f5f5f5;
+  --table-row-odd-background: #ffffff;
+  --table-border-color: #000000;
+  
+  /* 搜索框 */
+  --search-background: #ffffff;
+  --search-border-color: #000000;
+  --search-color: #000000;
+  
+  /* 字体 */
+  --base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --base-font-size: 16px;
+  --base-line-height: 1.6;
+  
+  /* 边距和间距 */
+  --sidebar-width: 280px;
+  --content-max-width: 90%;
+}
+
+/* 强制高对比度 */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* 段落和文本 */
+p {
+  color: #000000;
+  line-height: 1.7;
+  margin-bottom: 1em;
+}
+
+/* 链接样式 */
+a {
+  color: #000000;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+
+/* 代码样式 */
+code {
+  background-color: #f0f0f0;
+  color: #000000;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* 表格样式 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+th, td {
+  border: 1px solid #000000;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* 引用块 */
+blockquote {
+  border-left: 4px solid #000000;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background-color: #f8f8f8;
+  color: #000000;
+}
+
+/* 列表 */
+ul, ol {
+  color: #000000;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+/* 侧边栏增强 */
+.sidebar ul li a {
+  color: #000000;
+  font-weight: 500;
+}
+
+.sidebar ul li.active > a {
+  color: #000000;
+  font-weight: 700;
+  border-left: 3px solid #000000;
+}
+
+/* 搜索框增强 */
+.search input {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+}
+
+/* 响应式优化 */
+@media screen and (max-width: 768px) {
+  :root {
+    --sidebar-width: 0;
+  }
+  
+  .sidebar {
+    background-color: #ffffff;
+  }
+}

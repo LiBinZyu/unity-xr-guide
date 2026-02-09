@@ -1,0 +1,33 @@
+{
+  "name": "unity-xr-guide",
+  "version": "1.0.0",
+  "description": "Unity XR 开发学习指南",
+  "main": "index.html",
+  "scripts": {
+    "dev": "docsify serve .",
+    "serve": "docsify serve .",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "unity",
+    "xr",
+    "vr",
+    "ar",
+    "mr",
+    "tutorial",
+    "guide"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/unity-xr-guide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/unity-xr-guide/issues"
+  },
+  "homepage": "https://your-username.github.io/unity-xr-guide"
+}
