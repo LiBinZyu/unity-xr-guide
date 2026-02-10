@@ -1,8 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 * [Home](/)
-* [Concepts](doc/README.md)
+* [Contents](doc/README.md)
   * [What is XR](doc/xr-overview.md)
   * [Unity](doc/unity-basics.md)
-  * [Open XR](doc/openxr.md)
+  * [OpenXR and Design Principles](doc/openxr.md)
   * [Install Meta SDK](doc/helloworld.md)
