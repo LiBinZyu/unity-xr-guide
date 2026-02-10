@@ -49,7 +49,7 @@
 
   /* Spacing */
   --sidebar-width: 240px;
-  --content-max-width: 95%;
+  --content-max-width: 1000px;
 }
 
 /* Smooth font rendering */
@@ -149,7 +149,7 @@ blockquote {
 }
 
 blockquote:hover {
-  transform: translateY(5px);
+  transform: translateY(2px);
 }
 
 /* Lists */
@@ -193,11 +193,10 @@ img {
 @media screen and (max-width: 200px) {
   :root {
     --sidebar-width: 0;
-    --content-max-width: 100%;
   }
 
   .content {
-    max-width: 100% !important;
+    max-width: 50% !important;
     padding: 0 16px !important;
   }
 
