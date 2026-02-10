@@ -1,12 +1,12 @@
 # XR Technology Overview
 
-XR (Extended Reality) technology is the collective term for virtual reality, augmented reality, and mixed reality.
+XR (Extended Reality) is the umbrella term for Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR).
 
 ## Landscape
 
-As we transition from the two-dimensional interfaces of the current webpage toward spatial computing, understanding the terminology and technological underpinnings of immersive environments is essential for students. The collective term for these technologies is Extended Reality (XR), an umbrella designation that encompasses Augmented Reality (AR), Virtual Reality (VR), and Mixed Reality (MR). While often used interchangeably in casual discourse, these distinct technologies represent specific points on the Reality-Virtuality Continuum, a framework that illustrates how reality transitions into virtual space.
+As we transition from 2D screens toward spatial computing, understanding the terminology and technological underpinnings of immersive environments is essential. While the terms are often used interchangeably in casual conversation, these technologies represent specific points on the Reality-Virtuality Continuum—a framework that illustrates the span between the completely real environment and a completely virtual one.
 
-XR serves as the foundational interface for the Metaverse, which is widely considered the next generation of the Internet. Unlike a simple video game, the Metaverse is a persistent, shared, and super virtual reality ecosystem supported by cross-disciplinary technologies including blockchain, AI, computer vision, and the Internet of Things (IoT).
+XR serves as the foundational interface for the next generation of the internet (often referred to as the Metaverse). Rather than just viewing content on a screen, XR allows users to interact with 3D data in real-time, supported by technologies such as computer vision, AI, and spatial audio.
 
 ## VR, AR, and MR
 
@@ -20,20 +20,23 @@ To navigate this field, one must distinguish between the varying levels of immer
 
 ![](_media/overview-1.png)
 
-## The Role of XR in the Metaverse
+<p class="caption">
+    Relationship of XR, AR, VR and MR.<br>
+    Source: Bingru Li, 2026.
+</p>
 
-The Metaverse is a shift in how humans socialize, work, and learn. The reliance on 2D learning environments like standard video conferencing has revealed significant limitations, such as a low sense of self-presence and user passivity, which XR seeks to resolve through immersive spatial environments.
+## XR Applications
 
-In the healthcare sector, XR is revolutionizing medical training and execution. Surgeons utilize MR and VR to create smart digital operating rooms, allowing them to view patient procedures or visualize 3D tissue data with high precision. Technologies like "Medivis" enable physicians to increase surgical accuracy by visualizing internal anatomy in 3D space, moving beyond the constraints of traditional 2D medical imaging.
+In the healthcare sector, XR is used for both training and surgical execution. Surgeons utilize MR and VR to visualize 3D tissue data with high precision. Platforms like Medivis allow physicians to overlay a patient's internal anatomy (based on CT/MRI scans) directly onto their body in the operating room. This moves medical imaging from 2D screens into 3D space, improving surgical accuracy.
 
 ![Magic Leap AR](_media/Magic-Leap-2-Augmented-Reality-Healthcare.jpg ':size=50%')
 
-<p class="caption">Magic Leap, Youtube, 2024.</p>
+<p class="caption">Source: Magic Leap, Youtube, 2024.</p>
 
 ![Magic Leap Surgery](_media/Magic-Leap-2-Surgery.jpg)
 
 
-<p class="caption">Magic Leap (@magicleap), X, 2023.</p>
+<p class="caption">Source: Magic Leap (@magicleap), X, 2023.</p>
 
 
 Commercially, the Metaverse facilitates a digital economy where users can transact commodities using blockchain and Non-Fungible Tokens (NFTs). Retailers are leveraging AR to allow customers to visualize products, such as furniture or vehicles, in their own physical space before purchase. This "try-before-you-buy" model exemplifies how immersive tech is bridging the gap between digital marketing and physical reality.
@@ -45,24 +48,50 @@ Commercially, the Metaverse facilitates a digital economy where users can transa
     Source: KivuCube, “Bottega Veneta AR Virtual Shoe Try‑on Case,” KivuCube Blog, August 18, 2023
   </p>
 
-In Industrial Robotics, VR-based teleoperation is transforming how we work in hazardous environments like space stations or toxic industrial zones. By replacing abstract joysticks with immersive VR controllers, operators can manipulate robotic arms with natural hand movements. This is particularly useful for controlling **Rope driven Flexible Arms**--soft, cable actuated robots designed to squeeze into confined spaces without damaging surrounding equipment. To ensure safety, many systems now employ **Dual-Mode Architectures**. In this workflow, the operator first performs the task in a simulation (Indirect mode) to verify the path is clear of collisions, and only then authorizes the physical robot to execute the movement (Direct mode).
+
+XR provides a new medium for preservation and education. The *Horizon of Khufu* experience, for example, allows visitors to virtually walk through the Giza Necropolis.
+
+![](_media/khufu.jpg)
+<p class="caption">
+    The Horizon of Khufu experience allows visitors to stand atop the Great Pyramid and enjoy an unobstructed 360-degree view of Giza. <br>
+    Source: Excurio
+    </p>
+
+To achieve cinema quality visuals without the latency or compression artifacts typical of wireless streaming, this experience utilizes Location-Based VR (LBVR), where users carry wearable workstations (backpack PCs) to render graphics locally. This hardware setup powers a shared 'co-location' system, synchronizing the precise physical position of dozens of users into a single virtual environment to prevent collisions and enable social interaction, users are enabled to touch or walk to somewhere with controller to trigger plot events.
+
+Current research indicates that the primary motivation for this shift extends beyond entertainment. As highlighted in recent studies on digital museums, technologies like Virtual Reality offer a solution to the limitations of physical sites—whether due to fragility, geographical distance, or, in the case of lost history, complete physical absence. By creating a Digital Twin of a heritage site, curators can democratize access, allowing students to explore sensitive archaeological areas without causing degradation to the original structure.
+
+To achieve the hyper realistic visual fidelity seen in experiences like Horizon of Khufu, developers rely heavily on photogrammetry and handcrafting.
+
+> **Photogrammetry**: A technology that extracts three-dimensional geometric information from two-dimensional images. In cultural heritage, this involves taking thousands of overlapping photographs of an artifact or site and using software to stitch them together into a highly detailed, textured 3D model.
+
+However, the true value of XR in this domain lies in its psychological impact. Research published in Presence suggests that the effectiveness of these applications is measured by their ability to induce a sense of "being there." Unlike watching a documentary, a high fidelity VR experience leverages multisensory feedback to bridge the emotional distance between the viewer and the past.
+
+Today, the research focus in the West is pivoting from merely displaying objects to storytelling. The challenge is no longer just technical rendering, but how to guide a user's attention in a 360 degree non-linear environment to ensure that the educational message is not lost in the spectacle.
+
+In hazardous environments, such as space stations or nuclear facilities, VR-based teleoperation transforms how humans control robots. Instead of using abstract joysticks, operators wear VR headsets to manipulate robotic arms using natural hand movements.
+
+This is particularly useful for controlling flexible manipulators (soft robots designed for confined spaces). To ensure safety, many systems use a Dual-Mode Architecture:
+
+1. Indirect Mode: The operator performs the task in a simulation to verify the path is clear.
+2. Direct Mode: The operator authorizes the physical robot to execute the verified movement.
 
 However, real-time control faces significant technical hurdles. **Network Latency** remains a critical issue, where even millisecond delays can cause precision loss in high speed operations. Furthermore, users often struggle with the disconnect between moving a robot's base and manipulating its hands. Advanced techniques like **Redirected Walking**, which tricks the user's brain into perceiving infinite walking space within a small physical room, are being researched to make this mode-switching seamless.
 
-> Start by experimenting with **Unity** or **ROS (Robot Operating System)** simulations using open-source robot models like Fetch to get hands-on experience without needing expensive hardware.
+> Start by experimenting with **Unity** or **ROS (Robot Operating System)** simulations using open-source robot models.
 
 ![](_media/teleoperation.png)
 
 <p class="caption">
     User is teleoperating The 1X Neo using headset, it is one of the first humanoid robots.<br>
-    The Wall Street Journal, Youtube, 2025
+    Source: The Wall Street Journal, Youtube, 2025
 </p>
 
 ## Devices: From Headsets to Spatial Computers
 
 Understanding the hardware landscape is crucial for developers, as the capabilities of the device dictate the design of the experience.
 
-### The Classics: Pioneers of Immersion
+### The Mobile Era (3DoF)
 These devices laid the groundwork for today's industry but faced limitations in mobility or interaction.
 *   **Google Cardboard & Gear VR:** These mobile-based viewers introduced millions to VR. They offered a **3DoF** (3-Degrees-of-Freedom) experience, allowing users to look around but not move through space. While accessible, they often caused motion sickness due to latency and lack of positional tracking.
 
@@ -83,9 +112,10 @@ These devices laid the groundwork for today's industry but faced limitations in 
         Source: “Google Glass,” Wikipedia, 2026
     </p>
 
-### The 6DoF Room-Scale VR
-With the introduction of **6DoF** (6-Degrees-of-Freedom) tracking, users could physically walk around and interact with virtual objects using hand controllers.
-*   **Oculus Rift & HTC Vive:** These PC-tethered headsets set the standard for high-fidelity VR gaming and simulation, requiring powerful computers and external sensors ("Lighthouses").
+### The 6DoF VR
+These headsets introduced 6DoF (6-Degrees-of-Freedom) to the consumer market. Users could walk, crouch, and use hands to interact with objects. However, they required powerful external computers and external sensors ("Lighthouses") to function.
+
+*   **Oculus Rift & HTC Vive:** These PC-tethered headsets set the standard for high-fidelity VR gaming and simulation.
 
     ![](_media/htc-vive-vs-oculus-rift.jpg)
 
@@ -107,7 +137,7 @@ With the introduction of **6DoF** (6-Degrees-of-Freedom) tracking, users could p
 > </p>
 
 ### The Modern Standard: Standalone Mixed Reality
-Today's dominant platform for development is the standalone headset, which processes everything on-board without wires.
+Today's development standard is the standalone headset, which processes everything on-board without wires.
 *   **Meta Quest 3 / 3S:** Currently the market leader. These devices combine high-resolution VR with color **Passthrough** cameras, enabling Mixed Reality (MR) where virtual objects interact with the physical room. The Quest 3S ($299) democratizes this technology for mass adoption.
 
     ![](_media/quest-3s-vs-3.jpg)
@@ -117,7 +147,7 @@ Today's dominant platform for development is the standalone headset, which proce
         Source: “Meta Quest 3S and Meta Quest 3,” Meta, 2025
     </p>
 
-*   **Apple Vision Pro:** A premium "Spatial Computer" that emphasizes eye-tracking and hand gestures for interaction, pushing the boundaries of display resolution and pass-through quality.
+*   **Apple Vision Pro:** A premium "Spatial Computer" that eschews controllers in favor of eye-tracking and hand gestures. It focuses on high-resolution displays and seamless integration with existing 2D apps.
 
     ![](_media/Apple-WWCD23-Vision-Pro-multitasking-230605.jpg)
 
@@ -126,9 +156,9 @@ Today's dominant platform for development is the standalone headset, which proce
         Source: Apple Vision Pro WWDC 2023, Apple, 2023
     </p>
 
-### Emerging Form Factors (2025+)
+### Emerging Form Factors (Smart Glasses)
 The future points toward lightweight, all-day wearables integrating AI.
-*   **XREAL Air 2 Ultra:** AR glasses that project a massive virtual screen (154") for productivity and media, prioritizing portability over full immersion.
+*   **XREAL Air 2 Ultra:** AR glasses that project a virtual screen for productivity, prioritizing portability over full immersion.
 
     ![](_media/xrealair2ultra.jpg)
 
@@ -137,7 +167,7 @@ The future points toward lightweight, all-day wearables integrating AI.
         Source: “XREAL Air 2 Ultra,” XREAL, 2025
     </p>
 
-*   **Meta Orion:** A prototype for true holographic AR glasses with a wide field of view and neural wristband control, representing the next leap in display technology.
+*   **Meta Orion:** Devices that integrate AI assistants. While some (like Ray-Ban) lack a display, others (like the Orion prototype) aim to overlay holographic interfaces onto the real world without the bulk of a VR headset.
 
     ![](_media/metaorion.jpg)
 
@@ -152,7 +182,7 @@ The future points toward lightweight, all-day wearables integrating AI.
 
 Despite the potential, widespread adoption of XR and the Metaverse faces significant hurdles.
 
-**Infrastructure and Latency:** A truly immersive Metaverse requires real-time data synchronization on a massive scale. High latency (lag) breaks the illusion of presence and can cause "immersion sickness" if it exceeds 20 milliseconds. Consequently, the rollout of 5G networks and edge computing is critical to handle the heavy computational loads required for rendering high-fidelity graphics on mobile XR devices.
+**Infrastructure and Latency:** To feel "real," XR requires ultra-low latency. If the delay between a user's movement and the visual response exceeds 20 milliseconds, it can cause "motion sickness." High-fidelity cloud streaming requires robust 5G or Wi-Fi 6E infrastructure to handle the data load.
 
 **Hardware Constraints:** Current XR devices face a trade-off between power and portability. Standalone headsets offer freedom of movement but have limited processing power compared to tethered PC systems. Furthermore, to achieve social acceptance, HMDs must become lightweight and comfortable for extended use, overcoming issues related to bulk and battery life.
 
@@ -162,7 +192,7 @@ Despite the potential, widespread adoption of XR and the Metaverse faces signifi
 
 ## Future Outlook
 
-The trajectory of XR points toward a future where the distinction between the physical and digital becomes increasingly porous. By 2030, advancements in Brain-Computer Interfaces (BCIs) and haptic technology could allow for the tracking and sharing of human memories and sensory experiences. As major technology firms invest billions in developing the infrastructure for these "Microverses," the ultimate goal remains a decentralized, interoperable ecosystem where users can move seamlessly between virtual worlds, carrying their digital assets and identities with them.
+The trajectory of XR points toward a future where the distinction between the physical and digital becomes increasingly porous. By 2030, advancements in **Brain-Computer Interfaces** (BCIs) and **haptic technology** could allow for the tracking and sharing of human memories and sensory experiences. As major technology firms invest billions in developing the infrastructure for these "Microverses," the ultimate goal remains a decentralized, interoperable ecosystem where users can move seamlessly between virtual worlds, carrying their digital assets and identities with them.
 
 ---
 
@@ -171,5 +201,10 @@ References
 [1] Dileep Kumar Murala; Sandeep Kumar Panda, "The Role of Immersive Reality (AR/VR/MR/XR) in Metaverse," in Metaverse and Immersive Technologies: An Introduction to Industrial, Business and Social Applications , Wiley, 2023, pp.159-189, doi: https://doi.org/10.1002/9781394177165.ch6
 
 [2] Meta, "What's the difference between AR, VR and MR?", Feb 14 2024, https://forwork.meta.com/blog/difference-between-vr-ar-and-mr/
+
+[3] Sydney Leslie, "The Key Role Of VR In Preserving Cultural Heritage", Arts Management & Technology Laboratory at Carnegie Mellon University,  May 6, 2022, https://amt-lab.org/blog/2022/4/motivating-usages-of-virtual-reality-in-cultural-heritage
+
+[4] Z. Xiao and Y. Deling, "The “Hyper-Presence” of Cultural Heritage in Shaping Collective Memory," in Presence, vol. 27, no. 1, pp. 107-135, March 2019, doi: https://10.1162/pres_a_00321.
+
 
 
