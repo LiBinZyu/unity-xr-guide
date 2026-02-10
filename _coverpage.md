@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-![logo](_media/icon.svg)
+![logo]()
 
 # Unity XR Development Guide <small>1.0</small>
 

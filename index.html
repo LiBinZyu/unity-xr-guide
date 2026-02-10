@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Unity XR Guide @XJTLU</title>
@@ -11,8 +12,10 @@
   <!-- Custom high contrast styles -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div id="app">Loading...</div>
+  <img src="_media/XJTLUlogo.png" alt="logo" style="width: 200px; ">
   <script>
     window.$docsify = {
       name: 'Unity XR Guide',
@@ -37,7 +40,14 @@
         placeholder: 'Search documents...',
         noData: 'No results found',
         depth: 4
-      }
+      },
+      plugins: [
+        function (hook, vm) {
+          hook.doneEach(function () {
+            window.currentMarkdownFile = vm.route.file;
+          });
+        }
+      ]
     }
   </script>
   <!-- Docsify core library -->
@@ -50,5 +60,112 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
   <!-- Copy code plugin -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <!-- JSZip for zipping files -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <script>
+    window.downloadMarkdownWithMedia = async function () {
+      if (!window.currentMarkdownFile) {
+        alert('Please wait for the page to load fully.');
+        return;
+      }
+
+      const status = document.createElement('div');
+      status.style.cssText = 'position:fixed;bottom:20px;right:20px;background:#333;color:#fff;padding:10px 20px;border-radius:4px;z-index:9999;font-family:sans-serif';
+      status.innerText = 'Packaging Markdown & Media...';
+      document.body.appendChild(status);
+
+      try {
+        const mdPath = window.currentMarkdownFile;
+        // Fetch the markdown content
+        const response = await fetch(mdPath);
+        if (!response.ok) throw new Error("Failed to fetch markdown file");
+        const content = await response.text();
+
+        const zip = new JSZip();
+        // Create a folder for images
+        const mediaFolder = zip.folder("media");
+
+        // Map to store original URL -> new local path
+        const urlMap = new Map();
+        let imgIndex = 0;
+
+        // Regex to find images in markdown: ![alt](url)
+        const regex = /!\[.*?\]\((.*?)\)/g;
+        let match;
+        const images = new Set();
+
+        // Collect all unique image URLs
+        while ((match = regex.exec(content)) !== null) {
+          images.add(match[1]);
+        }
+
+        const processPromises = Array.from(images).map(async (imgPath) => {
+          try {
+            // Resolve the image URL
+            let fetchUrl;
+            if (imgPath.startsWith('http') || imgPath.startsWith('//')) {
+              fetchUrl = imgPath;
+            } else if (imgPath.startsWith('/')) {
+              fetchUrl = imgPath; // Relative to root
+            } else {
+              // Relative to markdown file
+              const pathParts = mdPath.split('/');
+              pathParts.pop();
+              const dir = pathParts.join('/');
+              fetchUrl = (dir ? dir + '/' : '') + imgPath;
+            }
+
+            const imgResp = await fetch(fetchUrl);
+            if (!imgResp.ok) return;
+
+            const blob = await imgResp.blob();
+            // Determine extension
+            let fileExt = 'png';
+            if (blob.type) {
+              fileExt = blob.type.split('/')[1] || 'png';
+            } else if (imgPath.includes('.')) {
+              fileExt = imgPath.split('.').pop();
+            }
+
+            const newName = `image_${imgIndex++}.${fileExt}`;
+            mediaFolder.file(newName, blob);
+            urlMap.set(imgPath, 'media/' + newName);
+
+          } catch (e) {
+            console.warn('Failed to load image', imgPath, e);
+          }
+        });
+
+        await Promise.all(processPromises);
+
+        // Replace image links in content
+        const newContent = content.replace(/(!\[.*?\]\()(.*?)(\))/g, (match, prefix, url, suffix) => {
+          if (urlMap.has(url)) {
+            return prefix + urlMap.get(url) + suffix;
+          }
+          return match;
+        });
+
+        zip.file(mdPath.split('/').pop(), newContent);
+
+        // Generate and download
+        const blob = await zip.generateAsync({ type: "blob" });
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = mdPath.split('/').pop().replace('.md', '_packaged.zip');
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+
+      } catch (e) {
+        console.error(e);
+        alert('Error packaging download: ' + e.message);
+      } finally {
+        status.remove();
+      }
+    };
+  </script>
 </body>
+
 </html>

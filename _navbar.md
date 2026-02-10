@@ -2,7 +2,8 @@
 
 * Getting Started
   * [Install Meta SDK](doc/helloworld.md)
-  * [Basic Concepts](doc/xr-overview.md)
+  * [Content](doc/README.md)
 
 * Download
-  * [PDF](#)
+  * <a href="javascript:void(0)" onclick="window.print()" style="cursor:pointer">PDF</a>
+  * <a href="javascript:void(0)" onclick="window.downloadMarkdownWithMedia()" style="cursor:pointer">Markdown</a>

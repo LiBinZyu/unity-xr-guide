@@ -5,6 +5,4 @@
   * [What is XR](doc/xr-overview.md)
   * [Unity](doc/unity-basics.md)
   * [Open XR](doc/openxr.md)
-  * [Maths](doc/math-fundamentals.md)
-* [Install Meta SDK](doc/helloworld.md)
-* []()
+  * [Install Meta SDK](doc/helloworld.md)

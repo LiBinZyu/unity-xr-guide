@@ -43,12 +43,12 @@ To run Meta Horizon Link, an app that connects your headset and development mach
 
 
 > **Headset scene preview available only on Windows**
-> To preview a scene in a headset, you must use the Meta Horizon Link app on a Windows machine to connect to the headset. To simulate the headset view on a macOS (ARM only) or Windows machine, install the [Meta XR Simulator](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/xrsim-getting-started/) asset in your Unity project.
+> To preview a scene in a headset, you must use the Meta Horizon Link app on a Windows machine to connect to the headset. To simulate the headset view on a macOS (ARM only) or Windows machine, install the [Meta XR Simulator](https://developers.meta.com/horizon/documentation/unity/xrsim-getting-started/) asset in your Unity project.
 
 **Account requirements**
 
 * Unity ID: [Create or log in to your Unity account](https://id.unity.com/)
-* Meta Horizon developer account: [Register a Meta account](https://www.google.com/search?q=https://developers.meta.com/horizon/sign-up/)
+* Meta Horizon developer account: [Register a Meta account](https://developers.meta.com/horizon/sign-up/)
 
 ---
 
@@ -67,7 +67,9 @@ Unity Hub manages your Unity installations, tools, and projects in one place. Fo
 2. Select **Installs** from the left navigation bar, which displays the Unity Editor versions installed on your system.
 3. Click **Install Editor** and choose Unity version **6.1** or later.
 4. On the **Add module** screen, select the **Android Build Support** items in the **Platforms** section.
+
     ![](_media/helloworld-2.png)
+
 5. Click **Install**.
 
 ---
@@ -76,7 +78,7 @@ Unity Hub manages your Unity installations, tools, and projects in one place. Fo
 
 ### Meta Quest Developer Hub XR project setup
 
-> Optionally, you can use the Meta Quest Developer Hub app to generate a Unity 3D project. If you choose this option, skip this step and proceed directly to [Step 3: Add Building Blocks to your scene](https://www.google.com/search?q=%23step-3-add-building-blocks-to-your-scene). See [Create New XR Projects in MQDH](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/ts-mqdh-xr-projects) for detailed instructions.
+> Optionally, you can use the Meta Quest Developer Hub app to generate a Unity 3D project. If you choose this option, skip this step and proceed directly to [Step 3: Add Building Blocks to your scene](https://www.google.com/search?q=%23step-3-add-building-blocks-to-your-scene). See [Create New XR Projects in MQDH](https://developers.meta.com/horizon/documentation/unity/ts-mqdh-xr-projects) for detailed instructions.
 
 ### Add Meta XR SDKs to your Unity account
 
@@ -90,6 +92,7 @@ Unity Hub manages your Unity installations, tools, and projects in one place. Fo
 
 
 4. On *each asset page*, click **Add to My Assets**. The following image shows the button for the Meta XR Core SDK:
+
     ![](_media/helloworld-3.png)
 
 ### Create a Unity project
@@ -97,16 +100,20 @@ Unity Hub manages your Unity installations, tools, and projects in one place. Fo
 Follow the steps below to create a new 3D Unity project in Unity Hub:
 
 1. Select **Projects** in the left navigation bar, then click **New project**.
+
     ![](_media/helloworld-4.png)
+
 2. Select Unity Editor version **6.1** or later.
 3. Select the **Universal 3D** template, an empty Unity 3D project built on the Universal Render Pipeline (URP).
 4. Enter your project name, a save location, and a Unity organization.
 5. Click **Create project**.
+
     ![](_media/helloworld-5.png)
 
 ### Install the Unity OpenXR plugin
 
 1. Select **Edit** > **Project Settings** from the Unity Editor menu.
+
     ![](_media/helloworld-6.png)
 2. Select **XR Plug-in Management** on the left of the **Project Settings** window.
 3. If XR Plugin Management is not installed, click **Install XR Plugin Management**.
@@ -199,7 +206,7 @@ Building Blocks are modular components included in Meta XR SDKs that you can use
 
 ## Step 4: Preview your scene
 
-If you lack the required hardware to preview the scene on a Meta Quest device, follow the steps in [Simulate Builds with XR Simulator](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/xrsim-getting-started) to preview it on your computer. Otherwise, follow the steps below to preview your scene on your headset.
+If you lack the required hardware to preview the scene on a Meta Quest device, follow the steps in [Simulate Builds with XR Simulator](https://developers.meta.com/horizon/documentation/unity/xrsim-getting-started) to preview it on your computer. Otherwise, follow the steps below to preview your scene on your headset.
 
 ### Pair your headset with the Meta Horizon mobile app
 
@@ -215,7 +222,7 @@ For detailed setup instructions and troubleshooting, refer to the [Getting start
 
 1. On your mobile device, open the Meta Horizon app.
 2. In the app, tap the hamburger menu (the icon with three horizontal lines) next to the search bar. Then, tap **Devices** and select your headset from the results.
-**[Watch Video: Selecting Devices](https://www.google.com/search?q=https://scontent-gmp1-1.oculuscdn.com/v/t64.5771-25/491818916_1347773316801222_8126974667138582610_n.mp4%3F_nc_cat%3D101%26ccb%3D1-7%26_nc_sid%3D6500a6%26_nc_ohc%3D6FSwS7_-sZYQ7kNvwEBsAsg%26_nc_oc%3DAdlrN5xkd9Hw1aYy5MRhcVK5-LN__vQoGWBsCXPx-PAK9jQcOyuu938yvG5o-sIwLT0%26_nc_zt%3D28%26_nc_ht%3Dscontent-gmp1-1.oculuscdn.com%26oh%3D00_AftYbpn7tgUefmsURHSMgRAazBIndMJBdRiqab-RpfmlaQ%26oe%3D698F8C2B)**
+**[Watch Video: Selecting Devices](https://scontent-gmp1-1.oculuscdn.com/v/t64.5771-25/491818916_1347773316801222_8126974667138582610_n.mp4%3F_nc_cat%3D101%26ccb%3D1-7%26_nc_sid%3D6500a6%26_nc_ohc%3D6FSwS7_-sZYQ7kNvwEBsAsg%26_nc_oc%3DAdlrN5xkd9Hw1aYy5MRhcVK5-LN__vQoGWBsCXPx-PAK9jQcOyuu938yvG5o-sIwLT0%26_nc_zt%3D28%26_nc_ht%3Dscontent-gmp1-1.oculuscdn.com%26oh%3D00_AftYbpn7tgUefmsURHSMgRAazBIndMJBdRiqab-RpfmlaQ%26oe%3D698F8C2B)**
 3. Tap **Headset Settings** beneath the image of your headset.
 4. Tap **Developer Mode**.
 5. Turn on the **Developer Mode** toggle switch.
@@ -225,7 +232,7 @@ For detailed setup instructions and troubleshooting, refer to the [Getting start
 9. When asked to allow USB debugging, select **Always allow from this computer**.
 
 > **Important**
-> Developer Mode is intended for development tasks such as running, debugging and testing applications. Engaging in other activities may result in account limitations, suspension, or termination. For more information, see [Content Guidelines](https://www.google.com/search?q=https://developers.meta.com/horizon/policy/content-guidelines/).
+> Developer Mode is intended for development tasks such as running, debugging and testing applications. Engaging in other activities may result in account limitations, suspension, or termination. For more information, see [Content Guidelines](https://developers.meta.com/horizon/policy/content-guidelines/).
 
 ### Install Meta Horizon Link
 
@@ -253,9 +260,9 @@ For a video on starting Link using either a USB-C cable or Air Link, see [Set up
 
 You have completed this tutorial and now have a Unity 3D project that you can use to develop apps for Meta Quest VR headsets. Continue your learning using the following resources:
 
-* [Develop Unity apps for Meta Quest VR headsets](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/unity-development-overview/): Essential components and topics to build, test, and debug your apps.
-* [Introduction to Mixed Reality on Meta Quest](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/mr-experience-and-use-cases/): Immersive modes and use cases.
-* [Unity Sample Projects Overview](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/unity-samples-overview/): Sample scenes, motifs, and showcase projects built by Meta engineers to help you create VR experiences in Unity.
-* [Platform Solutions](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/ps-platform-intro/): Social, multiplayer, and commerce tools you can integrate into your app by using the Platform SDK.
-* [Meta XR Simulator Overview](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/xrsim-intro/): Package that lets you preview your scene on your computer.
-* [Meta Quest Developer Hub](https://www.google.com/search?q=https://developers.meta.com/horizon/documentation/unity/ts-mqdh/): App that manages devices, generates Unity projects, debugs apps, and submits them to the Meta Quest Store.
+* [Develop Unity apps for Meta Quest VR headsets](https://developers.meta.com/horizon/documentation/unity/unity-development-overview/): Essential components and topics to build, test, and debug your apps.
+* [Introduction to Mixed Reality on Meta Quest](https://developers.meta.com/horizon/documentation/unity/mr-experience-and-use-cases/): Immersive modes and use cases.
+* [Unity Sample Projects Overview](https://developers.meta.com/horizon/documentation/unity/unity-samples-overview/): Sample scenes, motifs, and showcase projects built by Meta engineers to help you create VR experiences in Unity.
+* [Platform Solutions](https://developers.meta.com/horizon/documentation/unity/ps-platform-intro/): Social, multiplayer, and commerce tools you can integrate into your app by using the Platform SDK.
+* [Meta XR Simulator Overview](https://developers.meta.com/horizon/documentation/unity/xrsim-intro/): Package that lets you preview your scene on your computer.
+* [Meta Quest Developer Hub](https://developers.meta.com/horizon/documentation/unity/ts-mqdh/): App that manages devices, generates Unity projects, debugs apps, and submits them to the Meta Quest Store.

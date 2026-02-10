@@ -7,46 +7,46 @@
   --icon-color: #9B9CAE;
   --secondary-font-color: #616B7E;
   --primary-font-color: #11142D;
-  
+
   /* Theme colors */
   --theme-color: var(--primary-font-color);
   --theme-color-dark: #000000;
   --theme-color-light: var(--background-color);
-  
+
   /* Background */
   --base-background-color: var(--background-color);
   --base-color: var(--primary-font-color);
-  
+
   /* Sidebar */
   --sidebar-background: var(--sidebar-window-color);
   --sidebar-border-color: var(--border-color);
   --sidebar-toggle-icon-color: var(--icon-color);
-  
+
   /* Links */
   --link-color: var(--primary-font-color);
   --link-color--hover: var(--secondary-font-color);
-  
+
   /* Code blocks */
   --code-inline-background: var(--sidebar-window-color);
   --code-inline-color: var(--primary-font-color);
   --code-block-background: var(--sidebar-window-color);
   --code-block-color: var(--primary-font-color);
-  
+
   /* Tables */
   --table-row-even-background: var(--sidebar-window-color);
   --table-row-odd-background: var(--background-color);
   --table-border-color: var(--border-color);
-  
+
   /* Search */
   --search-background: var(--background-color);
   --search-border-color: var(--border-color);
   --search-color: var(--primary-font-color);
-  
+
   /* Fonts */
   --base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --base-font-size: 16px;
   --base-line-height: 1.5;
-  
+
   /* Spacing */
   --sidebar-width: 240px;
   --content-max-width: 95%;
@@ -59,7 +59,12 @@
 }
 
 /* Heading styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--primary-font-color);
   font-weight: 600;
   margin-top: 1.5em;
@@ -115,15 +120,16 @@ table {
   margin: 1em 0;
 }
 
-th, td {
+th,
+td {
   border: 1px solid var(--border-color);
   padding: 12px;
   text-align: left;
 }
 
 th {
-  background-color: var(--primary-font-color);
-  color: var(--background-color);
+  background-color: var(--back);
+  color: var(--secondary-font-color);
   font-weight: 600;
 }
 
@@ -133,15 +139,22 @@ tr:nth-child(even) {
 
 /* Blockquote */
 blockquote {
-  border-left: 4px solid var(--primary-font-color);
-  margin: 1em 0;
-  padding: 0.5em 1em;
-  background-color: var(--sidebar-window-color);
-  color: var(--primary-font-color);
+  border-left: 8px solid var(--theme-color);
+  margin: 2em 0;
+  padding: 1.5em;
+  background-color: var(--sidebar-window-color) !important;
+  color: var(--secondary-font-color) !important;
+  border-radius: 0 8px 8px 0;
+  transition: transform 0.2s ease;
+}
+
+blockquote:hover {
+  transform: translateY(5px);
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   color: var(--primary-font-color);
   margin-bottom: 1em;
 }
@@ -156,7 +169,7 @@ li {
   font-weight: 500;
 }
 
-.sidebar ul li.active > a {
+.sidebar ul li.active>a {
   color: var(--primary-font-color);
   font-weight: 700;
 }
@@ -168,18 +181,87 @@ li {
   color: var(--primary-font-color);
 }
 
+/* Image styles - global */
+img {
+  max-width: 300px !important;
+  max-height: 300px;
+  display: block;
+  margin: 1em auto;
+}
+
 /* Responsive optimization */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 200px) {
   :root {
     --sidebar-width: 0;
     --content-max-width: 100%;
   }
+
   .content {
     max-width: 100% !important;
     padding: 0 16px !important;
   }
-  
+
   .sidebar {
     background-color: var(--sidebar-window-color);
   }
+}
+
+@media print {
+  :root {
+    --sidebar-width: 0;
+    --content-max-width: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--sidebar-window-color) !important;
+  }
+
+  /* Hide navigation and sidebar elements */
+  .sidebar,
+  .sidebar-toggle,
+  .app-nav,
+  .github-corner {
+    display: none !important;
+  }
+
+  /* Reset main content layout */
+  .content {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: static !important;
+  }
+
+  /* Optimize images for print */
+  img {
+    max-width: 60% !important;
+    max-height: 60%;
+    page-break-inside: avoid;
+    display: block;
+    margin: 1em auto;
+  }
+
+  /* Prevent code blocks from being cut off */
+  pre {
+    white-space: pre-wrap !important;
+    overflow: visible !important;
+    border: 1px solid var(--border-color) !important;
+  }
+
+  /* Hide potential empty scrollbars */
+  * {
+    overflow-y: visible !important;
+  }
+}
+
+.caption {
+  text-align: center;
+  color: var(--secondary-font-color);
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.2;
 }
