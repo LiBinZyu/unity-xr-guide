@@ -163,7 +163,13 @@ li {
   margin-bottom: 0.3em;
 }
 
+
 /* Sidebar enhancements */
+.sidebar .app-name img {
+  max-width: 90% !important;
+  margin: 0 auto;
+}
+
 .sidebar ul li a {
   color: var(--primary-font-color);
   font-weight: 500;
